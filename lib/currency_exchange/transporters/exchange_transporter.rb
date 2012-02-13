@@ -9,9 +9,15 @@ module CurrencyExchange
   module Transporters
     class ExchangeTransporter
 
-      def retrieve_rates(url)
-        fetch_json(url)
+      def initialize
+        @storage = CurrencyExchange::Storage::Cache.instance
       end
+
+      def retrieve_rates(url)
+        @storage.fetch(url) || @storage.store(url, fetch_json(url))
+      end
+
+      private 
 
       def fetch_json(url)
         response = RestClient.get(url, {:accept => :json})

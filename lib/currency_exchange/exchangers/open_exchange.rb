@@ -8,7 +8,7 @@ module CurrencyExchange
     end
 
     def convert(number, from, to)
-      number * rates[to.upcase] * ( 1 / rates[from.upcase] ) if rates[to.upcase] and rates[from.upcase]
+      number * rates[to.upcase] * ( 1 / rates[from.upcase] ) if rates[to.upcase] && rates[from.upcase]
     end
 
     private
