@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = CurrencyExchange::VERSION
   s.authors     = ["Thil Bandara"]
   s.email       = ["tbandara@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/thil/currency_exchange"
   s.summary     = %q{A basic library to retrieve and convert currency}
   s.description = %q{A basic library to retrieve and convert currency}
 
@@ -22,4 +22,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec"
   s.add_runtime_dependency "rest-client"
   s.add_runtime_dependency "json"
+  s.add_runtime_dependency "activesupport", ">= 3.2.0"
+  s.add_runtime_dependency "rails", ">= 3.2.0"
 end

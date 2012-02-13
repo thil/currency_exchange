@@ -14,6 +14,11 @@ module CurrencyExchange
     autoload :Currencies, 'currency_exchange/data/currencies'
   end
 
+  module Storage
+    autoload :Cache, 'currency_exchange/storage/cache'
+    autoload :MemCache, 'currency_exchange/storage/mem_cache'
+  end
+
   class << self
     def convert(number, from, to)
       exchanger.convert(number, from, to) if has_currency?(from, to)
