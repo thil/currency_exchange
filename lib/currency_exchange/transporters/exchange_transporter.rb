@@ -17,7 +17,7 @@ module CurrencyExchange
         @storage.fetch(url) || @storage.store(url, fetch_json(url))
       end
 
-      private 
+      private
 
       def fetch_json(url)
         response = RestClient.get(url, {:accept => :json})
