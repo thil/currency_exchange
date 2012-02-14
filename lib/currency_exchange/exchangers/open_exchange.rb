@@ -4,7 +4,7 @@ module CurrencyExchange
     LATEST_EXCHANGE_URL = "http://openexchangerates.org/latest.json"
 
     def initialize
-      @transporter = CurrencyExchange::Transporters::ExchangeTransporter.new
+      @transporter = CurrencyExchange::Transporters::ExchangeTransporter.load_instance(:json)
     end
 
     def convert(number, from, to)

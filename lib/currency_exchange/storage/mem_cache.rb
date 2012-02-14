@@ -5,15 +5,17 @@ rescue LoadError
 end
 
 module CurrencyExchange
-  class Storage::MemCache < Storage::Cache
+  module Storage
+    class MemCache < Cache
 
-    def fetch(key)
-      Rails.cache.read(key)
-    end
+      def fetch(key)
+        Rails.cache.read(key)
+      end
       
-    def store(key, value)
-      Rails.cache.write(key, value, :expires_in => 1.day)
-      value
+      def store(key, value)
+        Rails.cache.write(key, value, :expires_in => 1.day)
+        value
+      end
     end
   end
 end

@@ -1,6 +1,8 @@
 module CurrencyExchange
   class Storage::Cache
 
+    CACHE_STRATEGY = { :memcache => CurrencyExchange::Storage::MemCache }
+
     class << self
       attr_accessor :cache_strategy
 
@@ -19,11 +21,7 @@ module CurrencyExchange
     private
 
     def self.load_instance
-      if self.cache_strategy == :memcache
-        CurrencyExchange::Storage::MemCache.new
-      else
-        self.new
-      end
+      (CACHE_STRATEGY[cache_strategy] || self).new
     end
 
   end

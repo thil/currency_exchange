@@ -9,21 +9,23 @@ module CurrencyExchange
   module Transporters
     class ExchangeTransporter
 
+      TRANSPORTER_STRATEGY = { :json => CurrencyExchange::Transporters::JsonTransporter }
+
       def initialize
         @storage = CurrencyExchange::Storage::Cache.instance
       end
 
       def retrieve_rates(url)
-        @storage.fetch(url) || @storage.store(url, fetch_json(url))
+        @storage.fetch(url) || @storage.store(url, fetch_data(url))
       end
 
-      private
-
-      def fetch_json(url)
-        response = RestClient.get(url, {:accept => :json})
-        JSON.parse(response.body)
+      def fetch_data(url)
+        raise NotImplementedError.new("fetch_data")
       end
 
+      def self.load_instance(transporter_strategy)
+        (TRANSPORTER_STRATEGY[transporter_strategy] || self).new
+      end
     end
   end
 end
