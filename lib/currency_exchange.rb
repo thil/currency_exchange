@@ -8,6 +8,7 @@ module CurrencyExchange
 
   module Transporters
     autoload :ExchangeTransporter, 'currency_exchange/transporters/exchange_transporter'
+    autoload :JsonTransporter, 'currency_exchange/transporters/json_transporter'
   end
 
   module Data
