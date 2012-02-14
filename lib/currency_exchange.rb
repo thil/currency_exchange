@@ -7,8 +7,8 @@ module CurrencyExchange
   end
 
   module Transporters
-    autoload :ExchangeTransporter, 'currency_exchange/transporters/exchange_transporter'
     autoload :JsonTransporter, 'currency_exchange/transporters/json_transporter'
+    autoload :ExchangeTransporter, 'currency_exchange/transporters/exchange_transporter'
   end
 
   module Data
@@ -16,8 +16,8 @@ module CurrencyExchange
   end
 
   module Storage
-    autoload :Cache, 'currency_exchange/storage/cache'
     autoload :MemCache, 'currency_exchange/storage/mem_cache'
+    autoload :Cache, 'currency_exchange/storage/cache'
   end
 
   class << self
