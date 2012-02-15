@@ -6,7 +6,7 @@ end
 
 module CurrencyExchange
   module Storage
-    class MemCache < Cache
+    class RailsCache < Cache
 
       def fetch(key)
         Rails.cache.read(key)

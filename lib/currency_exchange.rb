@@ -16,7 +16,7 @@ module CurrencyExchange
   end
 
   module Storage
-    autoload :MemCache, 'currency_exchange/storage/mem_cache'
+    autoload :RailsCache, 'currency_exchange/storage/rails_cache'
     autoload :Cache, 'currency_exchange/storage/cache'
   end
 
