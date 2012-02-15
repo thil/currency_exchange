@@ -1,7 +1,7 @@
 module CurrencyExchange
   class Storage::Cache
 
-    CACHE_STRATEGY = { :memcache => CurrencyExchange::Storage::MemCache }
+    CACHE_STRATEGY = { :rails_cache => CurrencyExchange::Storage::RailsCache }
 
     class << self
       attr_accessor :cache_strategy

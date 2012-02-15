@@ -1,10 +1,3 @@
-begin
-  require 'rest-client'
-  require 'json'
-rescue LoadError
-  raise "You don't have the required gems installed"
-end
-
 module CurrencyExchange
   module Transporters
     class ExchangeTransporter
