@@ -3,7 +3,7 @@ class Numeric
   
   def exchange(from, to)
     exchange = CurrencyExchange.convert(self, from, to)
-    exchange ? "$%.2f" % exchange : UNABLE_TO_EXCHANGE
+    exchange ? "%.2f" % exchange : UNABLE_TO_EXCHANGE
   end
   
   def method_missing(sym, *args, &block)
