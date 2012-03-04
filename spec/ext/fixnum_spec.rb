@@ -22,7 +22,7 @@ describe Numeric do
     end
 
     it "should convert exchange value into dollar decimals" do
-      subject.should == "$%.2f" % converted
+      subject.should == "%.2f" % converted
     end
   end
 
