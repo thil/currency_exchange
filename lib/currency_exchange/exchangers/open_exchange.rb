@@ -1,7 +1,7 @@
 module CurrencyExchange
   class Exchangers::OpenExchange
 
-    LATEST_EXCHANGE_URL = "http://openexchangerates.org/latest.json"
+    LATEST_EXCHANGE_URL = "http://openexchangerates.org/api/latest.json?app_id=#{ENV['open_exchange_id']}"
 
     def initialize
       @transporter = CurrencyExchange::Transporters::ExchangeTransporter.load_instance(:json)
